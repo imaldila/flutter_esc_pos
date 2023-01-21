@@ -26,7 +26,6 @@
 	"editor.minimap.maxColumn": 200,
 	"editor.minimap.renderCharacters": false,
 	"editor.minimap.showSlider": "always",
-	"editor.renderIndentGuides": true,
 	"editor.tabSize": 3,
 	"explorer.confirmDelete": false,
 	"explorer.confirmDragAndDrop": false,
@@ -73,5 +72,6 @@
 			"workbench.action.terminal.clear",
 			"flutter.hotRestart"
 		]
-	}
+	},
+	"editor.guides.indentation": true
 }

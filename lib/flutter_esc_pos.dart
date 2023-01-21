@@ -5,23 +5,23 @@ import 'package:flutter/services.dart';
 class FlutterEscPos {
   static const MethodChannel _channel = const MethodChannel('flutter_esc_pos');
 
-  static Future<String> get platformVersion async {
-    final String version = await _channel.invokeMethod('getPlatformVersion');
+  static Future<String?> get platformVersion async {
+    final String? version = await _channel.invokeMethod('getPlatformVersion');
     return version;
   }
 
-  static Future<String> get startPrinterDiscovery async {
-    final String result = await _channel.invokeMethod('startPrinterDiscovery');
+  static Future<String?> get startPrinterDiscovery async {
+    final String? result = await _channel.invokeMethod('startPrinterDiscovery');
     return result;
   }
 
-  static Future<String> get stopPrinterDiscovery async {
-    final String result = await _channel.invokeMethod('stopPrinterDiscovery');
+  static Future<String?> get stopPrinterDiscovery async {
+    final String? result = await _channel.invokeMethod('stopPrinterDiscovery');
     return result;
   }
 
-  static Future<String> printToPrinter({List<Map<String, dynamic>> list, String printer, int printerSeries}) async {
-    final String result = await _channel.invokeMethod('printList', {'list': list, 'printer': printer, 'printerSeries': printerSeries});
+  static Future<String?> printToPrinter({List<Map<String, dynamic>>? list, String? printer, int? printerSeries}) async {
+    final String? result = await _channel.invokeMethod('printList', {'list': list, 'printer': printer, 'printerSeries': printerSeries});
     return result;
   }
 
@@ -31,21 +31,21 @@ class FlutterEscPos {
 }
 
 class Printer {
-  String target;
-  String ipAddress;
-  String macAddress;
-  String bdAddress;
-  String deviceName;
-  int deviceType;
-  String printerType;
-  int printerSeries;
-  String connectionType;
+  String? target;
+  String? ipAddress;
+  String? macAddress;
+  String? bdAddress;
+  String? deviceName;
+  int? deviceType;
+  String? printerType;
+  int? printerSeries;
+  String? connectionType;
 }
 
 class PrintObj {
   PrintObj();
 
-  String key;
+  String? key;
   dynamic value;
 
   toMap() {
@@ -59,7 +59,7 @@ class PrintText extends PrintObj {
     this.value = '$text\n';
   }
 
-  String key;
+  String? key;
   dynamic value;
 }
 
@@ -69,7 +69,7 @@ class PrintTextCenter extends PrintObj {
     this.value = '$text\n';
   }
 
-  String key;
+  String? key;
   dynamic value;
 }
 
@@ -79,7 +79,7 @@ class PrintTextRight extends PrintObj {
     this.value = '$text\n';
   }
 
-  String key;
+  String? key;
   dynamic value;
 }
 
@@ -89,7 +89,7 @@ class PrintFeed extends PrintObj {
     this.value = lines;
   }
 
-  String key;
+  String? key;
   dynamic value;
 }
 
@@ -99,7 +99,7 @@ class PrintLine extends PrintObj {
     this.value = lineThickness;
   }
 
-  String key;
+  String? key;
   dynamic value;
 }
 
@@ -109,7 +109,7 @@ class PrintCut extends PrintObj {
     this.value = type;
   }
 
-  String key;
+  String? key;
   dynamic value;
 }
 
@@ -119,6 +119,6 @@ class PrintDrawer extends PrintObj {
     this.value = type;
   }
 
-  String key;
+  String? key;
   dynamic value;
 }

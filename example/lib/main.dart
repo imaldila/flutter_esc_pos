@@ -85,7 +85,7 @@ class _MyAppState extends State<MyApp> {
               Text('Printers:\n'),
               for (Printer printer in _printerList) Text('${printer.deviceName}\n${printer.macAddress}\n${printer.printerSeries}\n${printer.connectionType}\n\n'),
               Divider(),
-              FlatButton(
+              ElevatedButton(
                 child: Text("Print"),
                 onPressed: () async {
                   for (Printer printer in _printerList) {
